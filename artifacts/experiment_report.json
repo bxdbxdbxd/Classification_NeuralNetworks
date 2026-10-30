@@ -1,0 +1,96 @@
+{
+  "random_state": 42,
+  "features": [
+    "age",
+    "anaemia",
+    "creatinine_phosphokinase",
+    "diabetes",
+    "ejection_fraction",
+    "high_blood_pressure",
+    "platelets",
+    "serum_creatinine",
+    "serum_sodium",
+    "sex",
+    "smoking",
+    "time"
+  ],
+  "target": "DEATH_EVENT",
+  "best_model_by_f1": "NeuralNet",
+  "final_metrics": {
+    "GaussianNB": {
+      "Accuracy": 0.316667,
+      "Precision": 0.158333,
+      "Recall": 0.5,
+      "F1-macro": 0.240506,
+      "ROC-AUC": 0.559371
+    },
+    "DecisionTree": {
+      "Accuracy": 0.316667,
+      "Precision": 0.158333,
+      "Recall": 0.5,
+      "F1-macro": 0.240506,
+      "ROC-AUC": 0.5
+    },
+    "LDA": {
+      "Accuracy": 0.316667,
+      "Precision": 0.158333,
+      "Recall": 0.5,
+      "F1-macro": 0.240506,
+      "ROC-AUC": 0.526316
+    },
+    "SVM": {
+      "Accuracy": 0.316667,
+      "Precision": 0.158333,
+      "Recall": 0.5,
+      "F1-macro": 0.240506,
+      "ROC-AUC": 0.513479
+    },
+    "kNN": {
+      "Accuracy": 0.416667,
+      "Precision": 0.57,
+      "Recall": 0.544929,
+      "F1-macro": 0.40324,
+      "ROC-AUC": 0.62837
+    },
+    "NeuralNet": {
+      "Accuracy": 0.7,
+      "Precision": 0.644444,
+      "Recall": 0.62516,
+      "F1-macro": 0.630643,
+      "ROC-AUC": 0.765083
+    }
+  },
+  "tuning": {
+    "GaussianNB": {
+      "model__var_smoothing": 1e-11
+    },
+    "DecisionTree": {
+      "model__criterion": "gini",
+      "model__max_depth": 1,
+      "model__min_samples_split": 2
+    },
+    "LDA": {
+      "model__shrinkage": 0.30000000000000004,
+      "model__solver": "lsqr"
+    },
+    "SVM": {
+      "model__C": 1,
+      "model__gamma": "scale",
+      "model__kernel": "linear"
+    },
+    "kNN": {
+      "model__metric": "manhattan",
+      "model__n_neighbors": 7,
+      "model__weights": "distance"
+    }
+  },
+  "cv_f1": {
+    "GaussianNB": 0.7057042363419408,
+    "DecisionTree": 0.8076425949786235,
+    "LDA": 0.8172452717674556,
+    "SVM": 0.8090658327880252,
+    "kNN": 0.6850573754001547
+  },
+  "best_nn_experiment": "exp_4_lr_high",
+  "best_nn_epochs": 8
+}
